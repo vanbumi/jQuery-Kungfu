@@ -1,0 +1,97 @@
+<h1 class="title-chapter" >Video 3</h1>
+
+<style>
+	li { 
+		color: black;
+	}
+	.emphasis { 
+		color: green;
+	}
+</style>
+
+<ul class="emphasis">
+	<li>hello1</li>
+	<li>hello2</li>
+	<li>
+		<ul>
+			<li>hello3 from the nest</li>
+		</ul>	
+	</li>
+	<li>hello4</li>
+</ul>
+
+<script>
+	// $('ul.emphasis').children ('li').css('color', 'green');
+	$('ul.emphasis').children ('li').eq(3).text('hello Kungfu');
+</script>
+
+<pre>
+&lt;style&gt;
+	li { 
+		color: black;
+	}
+&lt;/style&gt;
+
+&lt;ul class="emphasis"&gt;
+	&lt;li&gt;hello1&lt;/li&gt;
+	&lt;li&gt;hello2&lt;/li&gt;
+	&lt;li>
+		&lt;ul&gt;
+			&lt;li&gt;hello3 from the nest&gt;/li&gt;
+		&lt;/ul&gt;	
+	&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;script&gt;
+	$('ul.emphasis').children('li').css('color', 'green');	
+&lt;/script&gt;
+</pre>
+
+<p>Bila kita ganti .children menjadi find maka hasilnya akan green semua, karena dia akan mencari semua li dan diberi warna green</p>
+
+<pre>
+&lt;script&gt;
+	$('ul.emphasis').find('li').css('color', 'green');	
+&lt;/script&gt;
+</pre>
+
+<p>Cara lain</p>
+
+<pre>
+&lt;style&gt;
+	li { 
+		color: black;
+	}
+	.emphasis { 
+		color: green;
+	}
+&lt;/style&gt;
+
+&lt;script&gt;
+	$('ul.emphasis').children('li').addClass('emphasis');	
+&lt;/script&gt;
+</pre>
+
+<p>
+	Ganti dengan addClass('emphasis') dan tambahkan class emphasis di dalam CSS spt contoh diatas
+</p>
+
+<h3>Mengganti Text dengan jQuery</h3>
+<p>
+	Syntax jQ bisa untuk mengganti text, misalnya kita ingin mengganti text hello4 menjadi hello Kungfu, caranya sbb:
+</p>
+
+<pre>
+&lt;script&gt;
+	$('ul.emphasis').children('li').eq(3).text('hello Kungfu');	
+&lt;/script&gt;
+</pre>
+
+<p>
+	Keterangan kode:<br>
+	Tambahkan eq(), dan ganti css menjadi text('kata yang di iginkan')
+	beri nilai eq() sesuai urutan hello dimulai dari 0 (nol).
+</p>
+
+
+<br><br>

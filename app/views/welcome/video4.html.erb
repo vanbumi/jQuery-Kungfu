@@ -1,0 +1,41 @@
+
+	<h1 class="title-chapter" >Video 4 - jQuery Events</h1>
+
+	<p>
+		Pada latihan kali ini kita akan membuat tombol yang menghubungkan ke style css, yang mengatur tampilan web menjadi Day and Night layout.
+	</p>
+
+	<button>Day</button>
+	<button>Night</button>
+
+<script>
+	
+	(function() {
+		// var link = $('link');
+		$('button').click(function() {
+			// console.log('button was click'); // untuk cek dengan web developer tool apakah button sudah di klik
+			// console.log(this); // penggunaan this adalah untuk menunjuk button mana yang sudah di klik, baik Day or Night
+			// $(this).text('change'); // merubah text button menjadi yang di inginkan ('change')
+			// $('link').attr('href', '/css/night.css')
+
+			// it work! tapi ini respond ke 2 button day and night, bagaimana cara kita menghubungkan ke masing2 button,
+			// Ikuti percobaan ini kita membuat variable sytlesheet
+			var sytlesheet = $(this).text().toLowerCase(); // artinya adl kita membuat variable styleshhet yg menyimpan perintah this (yang di klik) untuk melakukan text() atai merubah text.
+			// Kemudian kita akan melakukan console log test 
+			// console.log(sytlesheet); // maka test di console akan menunjukkan nama button yang di klik. 
+			// $('link').attr('href', '/css/' + sytlesheet + '.css') // buat variable link
+			
+			$(this).siblings('button').removeAttr('disabled'); // *-> siblings
+
+			var link = $('link'); // maka akan menjadi:
+			
+			link.attr('href', '/css/' + sytlesheet + '.css');
+			// sekarang kita akan membuat button tsb disable setelah di klik
+			$(this).attr('disabled', 'disabled');
+			// This work but, we need to toggle it, karena bila button di klik 2 2 nya akan disabled, yang kita mau adalah button di klik salah satu button akan aktif, maka tambahkan siblings pada tanda *-> :
+			
+
+		});	
+	})();
+
+</script>	

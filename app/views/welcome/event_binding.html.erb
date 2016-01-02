@@ -1,0 +1,172 @@
+<h1 class="title-chapter">jQuery Events</h1>
+
+<h2>Let's Have Fun!</h2>
+
+<style>
+	#panel1 {
+		cursor: pointer;
+	}
+</style>
+
+<div class="container">
+	<div class="row">
+		<button id="btn1">button1</button>
+		<button id="btn2">button2</button>
+		<button id="btn3">button3</button>
+		<button id="btn4">button4</button>
+		<button id="btn5">button5</button>
+		<button id="btn6">button6</button>
+	</div>
+</div>
+
+<br>
+<div class="row">
+	<div class="col-md-2">
+		<div id="panel1" class="panel panel-primary">
+			<div class="panel-heading">
+				Panel1
+			</div>
+			<div class="panel-body">
+				Click Panel1 untuk menghilangkannya, dan click button1 untuk menampilkan dan merubah content
+			</div>	
+		</div>
+	</div>
+	<div id="panel2" class="col-md-2">
+		<div class="panel panel-primary">
+			<div class="panel-heading">
+				Panel2
+			</div>
+			<div class="panel-body">
+				Content2
+			</div>	
+		</div>
+	</div>
+	<div id="panel3" class="col-md-2">
+		<div class="panel panel-primary">
+			<div class="panel-heading">
+				Panel3
+			</div>
+			<div class="panel-body">
+				Content3
+			</div>	
+		</div>
+	</div>
+	<div id="panel4" class="col-md-2">
+		<div class="panel panel-primary">
+			<div class="panel-heading">
+				Panel4
+			</div>
+			<div class="panel-body">
+				Content4
+			</div>	
+		</div>
+	</div>
+	<div id="panel5" class="col-md-2">
+		<div class="panel panel-primary">
+			<div class="panel-heading">
+				Panel5
+			</div>
+			<div class="panel-body">
+				Content5
+			</div>	
+		</div>
+	</div>
+	<div id="panel6" class="col-md-2">
+		<div class="panel panel-primary">
+			<div class="panel-heading">
+				Panel6
+			</div>
+			<div class="panel-body">
+				Content6
+			</div>	
+		</div>
+	</div>	
+</div>
+
+<script>
+	$(function() {
+
+		//>> merubah text button
+		$('#btn1').html("My Button");
+		
+		//>> slideUp delay slideDown
+		$('#btn1').on('click', function() {
+			// $('#panel1').toggle();
+			//atau slideToggle
+			// $('#panel1').slideToggle(1000);
+			//atau show saya akan membuat bila click panel1, panel1 akan hide, dan bila click My Button akan muncul.
+			$('#panel1').show(1000);
+		})
+		// click panel to hide atau fadeOut
+		$('#panel1').on('click', function() {
+			$('#panel1').fadeOut(1000);
+		})
+		
+		//>> Sekarang kita akan membuat bila click masing2 button2, 3, 4 panel2, 3, 4 akan fadeOut tapi dengan toggle artinya bila di click lagi akan muncul kembali.
+
+		$('#btn2').on('click', function() {
+			$('#panel2').fadeToggle(500);
+		})
+
+		$('#btn3').on('click', function() {
+			$('#panel3').fadeToggle(500);
+		})
+
+		$('#btn4').on('click', function() {
+			$('#panel4').fadeToggle(500);
+		})
+
+		//>> Tambahkan button5 dan button6, panel5 dan panel6, rubah on click menjadi mouseover.
+		$('#btn5').on('mouseover', function() {
+			$('#panel5').fadeToggle(500);
+		})
+		$('#btn6').on('mouseover', function() {
+			$('#panel6').fadeToggle(500);
+		})
+
+		//>> Button 1 klik merubah content panel 1
+		$('#btn1').on('click', function() {
+			$('#panel1 .panel-body').html("Content ini berubah")
+		})
+
+	})
+</script>
+<br>
+
+<h3>Lakukan beberapa hal seperti dibawah ini:</h3>
+<pre>
+&lt;script&gt;
+	$(function() {
+
+		//>> hide show
+		$('#panel1').hide(1000).show(1000);
+		
+		//>> slideUp delay slideDown
+		$('#panel1').slideUp(1000).delay(1000).slideDown(1000)
+		
+		//>> fadeIn, fadeOut
+		$('#panel1').fadeOut(1000).fadeIn(1000)
+		
+		//>> fadeToggle
+		$('#panel1').fadeToggle(1000).fadeToggle(1000)
+		
+		//>> slideToggle
+		$('#panel1').slideToggle(1000).slideToggle(1000)
+		
+		//>> toggle only
+		$('#panel1').toggle(1000).toggle(1000)
+
+		//>> menambahkan css
+		$('#panel1').css({
+			color: "red",
+			text: "Content1 : content for panel 1",
+			fontWeight: 'bold'
+		});
+
+		$('#panel2').css({
+			opacity: '0.5'
+		})
+	})
+&lt;/script&gt;
+</pre>
+

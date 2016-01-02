@@ -1,0 +1,46 @@
+<h1>DOM Traversal</h1>
+
+<h2>Contoh Latihan</h2>
+<br />
+<p>Buatlah seperti dibawah ini:</p>
+
+<p>Hasilnya:</p>
+
+<style>
+	.special {
+		color: blue;
+	}
+</style>
+
+<ul class="list">
+	<li id="lat">Satu</li>
+	<li id="lat" class="special">Dua</li>
+	<li id="lat">Tiga</li>
+	<li id="lat">
+		<ul class="sublist">
+			<li id="lat">1</li>
+			<li id="lat">2</li>
+			<li id="lat">3</li>
+		</ul>
+	</li>
+</ul>
+
+<script>
+	
+	$(function () {
+		$('.list li').on('click', function() {
+			console.log('clicked');
+			// $(this).hide();
+			if ($(this).parent().is('.sublist')) {
+				$(this).hide();
+			};
+		})
+	})
+
+		// $('.sublist li').addClass('special');
+		// $('.list li').css({color: 'red'}); // ini untuk select semua list = .list li
+
+
+
+
+</script>

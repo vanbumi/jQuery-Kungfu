@@ -1,0 +1,39 @@
+<h1 class="title-chapter" >Video 5 - Events</h1>
+
+<div class="bodi">
+	<dl>
+		<dt>What are your hours?</dt>
+		<dd>We are open 24/7</dd>	
+		<dt>What are your hours?</dt>
+		<dd>We are open 24/7</dd>
+		<dt>What are your hours?</dt>
+		<dd>We are open 24/7</dd>
+		<dt>What are your hours?</dt>
+		<dd>We are open 24/7</dd>
+		<dt>What are your hours?</dt>
+		<dd>We are open 24/7</dd>	
+	</dl>
+</div>
+
+<script>
+
+	(function() {
+		// var dd = $('dd');
+
+		// dd.hide(); cara lain bisa ganti .hide dengan menambahkan class spt dibawah
+		// dd.addClass('hide');
+
+		// cara menggunakan filter
+		$('dd').filter(':nth-child(n+4)').addClass('hide');
+
+		// Mouse hover atau mouse enter to show
+		$('dl').on('mouseenter', 'dt', function() {
+			$(this)
+				.next()
+					.slideDown(200)
+					.siblings('dd')
+						.slideUp(200);
+		}); 
+	})();
+
+</script>	

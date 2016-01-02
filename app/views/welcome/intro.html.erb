@@ -1,0 +1,129 @@
+<h1 class="title-chapter"> Introduction jQuery</h1>
+
+<h2>Let's Have Fun!</h2>
+
+<div class="container">
+	<div class="row">
+		<button>button1</button>
+		<button>button2</button>
+		<button>button3</button>
+		<button>button4</button>
+	</div>
+</div>
+
+<br>
+<div class="row">
+	<div class="col-md-2">
+		<div id="panel1" class="panel panel-primary">
+			<div class="panel-heading">
+				Panel1
+			</div>
+			<div class="panel-body">
+				Content1
+			</div>	
+		</div>
+	</div>
+	<div id="panel2" class="col-md-2">
+		<div class="panel panel-primary">
+			<div class="panel-heading">
+				Panel2
+			</div>
+			<div class="panel-body">
+				Content2
+			</div>	
+		</div>
+	</div>
+	<div id="panel3" class="col-md-2">
+		<div class="panel panel-primary">
+			<div class="panel-heading">
+				Panel3
+			</div>
+			<div class="panel-body">
+				Content3
+			</div>	
+		</div>
+	</div>
+	<div id="panel4" class="col-md-2">
+		<div class="panel panel-primary">
+			<div class="panel-heading">
+				Panel4
+			</div>
+			<div class="panel-body">
+				Content4
+			</div>	
+		</div>
+	</div>	
+</div>
+
+<script>
+	$(function() {
+
+		//>> hide show
+		// $('#panel1').hide(1000).show(1000);
+		
+		//>> slideUp delay slideDown
+		// $('#panel1').slideUp(1000).delay(1000).slideDown(1000)
+		
+		//>> fadeIn, fadeOut
+		// $('#panel1').fadeOut(1000).fadeIn(1000)
+		
+		//>> fadeToggle
+		// $('#panel1').fadeToggle(1000).fadeToggle(1000)
+		
+		//>> slideToggle
+		// $('#panel1').slideToggle(1000).slideToggle(1000)
+		
+		//>> toggle only
+		// $('#panel1').toggle(1000).toggle(1000)
+
+		//>> menambahkan css
+		$('#panel1').css({
+			color: "red",
+			text: "Content1 : content for panel 1",
+			fontWeight: 'bold'
+		});
+
+		$('#panel2').css({
+			opacity: '0.5'
+		})
+	})
+</script>
+<br>
+
+<h3>Lakukan beberapa hal seperti dibawah ini:</h3>
+<pre>
+&lt;script&gt;
+	$(function() {
+
+		//>> hide show
+		$('#panel1').hide(1000).show(1000);
+		
+		//>> slideUp delay slideDown
+		$('#panel1').slideUp(1000).delay(1000).slideDown(1000)
+		
+		//>> fadeIn, fadeOut
+		$('#panel1').fadeOut(1000).fadeIn(1000)
+		
+		//>> fadeToggle
+		$('#panel1').fadeToggle(1000).fadeToggle(1000)
+		
+		//>> slideToggle
+		$('#panel1').slideToggle(1000).slideToggle(1000)
+		
+		//>> toggle only
+		$('#panel1').toggle(1000).toggle(1000)
+
+		//>> menambahkan css
+		$('#panel1').css({
+			color: "red",
+			text: "Content1 : content for panel 1",
+			fontWeight: 'bold'
+		});
+
+		$('#panel2').css({
+			opacity: '0.5'
+		})
+	})
+&lt;/script&gt;
+</pre>
+

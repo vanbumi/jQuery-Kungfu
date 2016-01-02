@@ -1,0 +1,94 @@
+<h1 class="title-chapter">Cara Kerja JQ</h1>
+
+<h3>Launching Code on Document Ready</h3>
+<p>
+To ensure that their code runs after the browser finishes loading the document, many JavaScript programmers wrap their code in an onload function:
+</p>
+
+<style>
+a.test {
+    font-weight: bold;
+}
+</style>
+
+<script>
+// 	window.onload = function() {
+ 
+//     alert( "welcome" );
+ 
+// };
+</script>
+
+<p>Unfortunately, the code doesn't run until all images are finished downloading, including banner ads. To run code as soon as the document is ready to be manipulated, jQuery has a statement known as the ready event:</p>
+
+<pre>
+$(document ).ready(function() { 
+    // Your code here.
+});
+</pre>
+
+atau
+
+<pre>
+$(window).load(function() {
+	// Your code here.
+})
+</pre>
+
+<a href="http://jquery.com">Click Link ini</a>
+
+<script>
+
+$( document ).ready(function() {
+
+	// console.log('Ready!');
+ 
+ //    $( "a" ).addClass('test').click(function( event ) {
+ //        alert( "Thanks for visiting! Dengan event.preventDefault mencegah anda ke website jquery.com" );
+
+        // event.preventDefault();
+
+        // menambahkan efek
+        // $(this).hide('slow');
+    });
+});
+
+$(window).load(function() {
+	console.log('window loaded juga')
+})
+
+</script>
+
+<h2>Avoiding Conflicts with Other Libraries</h2>
+
+<p>
+	The jQuery library and virtually all of its plugins are contained within the jQuery namespace. As a general rule, global objects are stored inside the jQuery namespace as well, so you shouldn't get a clash between jQuery and any other library (like prototype.js, MooTools, or YUI).
+
+That said, there is one caveat: by default, jQuery uses $ as a shortcut for jQuery. Thus, if you are using another JavaScript library that uses the $ variable, you can run into conflicts with jQuery. In order to avoid these conflicts, you need to put jQuery in no-conflict mode immediately after it is loaded onto the page and before you attempt to use jQuery in your page.
+</p>
+
+
+<pre>
+	<!-- Putting jQuery into no-conflict mode. -->
+&lt;script src="prototype.js"&gt;&lt;/script&gt;
+&lt;script src="jquery.js">&lt;/script&gt;
+
+&lt;script&gt;
+ 
+var $j = jQuery.noConflict();
+// $j is now an alias to the jQuery function; creating the new alias is optional.
+ 
+$j(document).ready(function() {
+    $j( "div" ).hide();
+});
+ 
+// The $ variable now has the prototype meaning, which is a shortcut for
+// document.getElementById(). mainDiv below is a DOM element, not a jQuery object.
+window.onload = function() {
+    var mainDiv = $( "main" );
+}
+ 
+&lt;/script&gt;
+</pre>
+
+http://learn.jquery.com/using-jquery-core/avoid-conflicts-other-libraries/
